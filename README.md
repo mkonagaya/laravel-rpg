@@ -6,21 +6,6 @@
 
 ``` npm install mdbootstrap ```
 
-## どうせならvueバージョン使ってみる
-
-``` 
-npm install -g @vue/cli 
-
-
-npm run dev
-npm install
-npm start
-
-```
-
-
-
-
 
 # Pusher
 
@@ -28,6 +13,18 @@ https://www.slideshare.net/ssuser2ff728/laravel-echo-vuejs-axios
 
 ``` composer require pusher/pusher-php-server ```
 
-https://blog.capilano-fw.com/?p=1418
+https://nextat.co.jp/staff/archives/213
 
-pusher の代わりにsocket.ioでも代用できそう。とりあえずpusher.
+
+# 毎回やること
+``` composer install ```
+
+vendorの入手
+
+```
+
+cp .env.example .env # .envの入手
+
+php artisan key:generate # app key の発行
+
+```
