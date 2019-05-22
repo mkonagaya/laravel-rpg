@@ -30,4 +30,5 @@ Homestead.json
 .tmux/
 .viminfo
 
-
+.npm/
+.config/
