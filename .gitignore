@@ -18,3 +18,16 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+# custom(paiza cloud)
+.bash_history
+.bash_logout
+.bashrc
+.composer/
+.editorconfig
+.profile
+.styleci.yml
+.tmux/
+.viminfo
+
+
