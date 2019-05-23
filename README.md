@@ -43,3 +43,6 @@ DB_PASSWORD=
 APP_SECURE=true # 追加
 
 ```
+
+# icons
+[fontawesome](https://fontawesome.com/icons?d=gallery)
