@@ -28,3 +28,18 @@ cp .env.example .env # .envの入手
 php artisan key:generate # app key の発行
 
 ```
+
+# env
+
+開発環境
+
+```
+
+
+DB_DATABASE=tw
+DB_USERNAME=root
+DB_PASSWORD=
+
+APP_SECURE=true # 追加
+
+```

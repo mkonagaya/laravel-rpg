@@ -32,3 +32,5 @@ Homestead.json
 
 .npm/
 .config/
+.mysql_history
+public_html/
