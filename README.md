@@ -17,15 +17,28 @@ https://nextat.co.jp/staff/archives/213
 
 
 # 毎回やること
-``` composer install ```
+``` 
 
-vendorの入手
+composer install  # vendorの入手
+
+
+```
+
+
 
 ```
 
 cp .env.example .env # .envの入手
 
 php artisan key:generate # app key の発行
+
+```
+
+## データ準備
+
+```
+
+php artisan migrate:refresh --seed
 
 ```
 
