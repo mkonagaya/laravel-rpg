@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CharacterModelsTableSeeder::class,
             CharacterModelTypesTableSeeder::class,
+            XiensTableSeeder::class,
+            ManualAllocationsTableSeeder::class,
         ]);
     }
 }

@@ -16,6 +16,14 @@ class CreateXiensTable extends Migration
         Schema::create('xiens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('xien_name');
+            $table->string('base');
+            $table->string('random')->comment('ランダムで上昇するステータス。40% - 60%');
+            $table->unsignedInteger('hp_min');
+            $table->unsignedInteger('hp_max');
+            $table->unsignedInteger('mp_min');
+            $table->unsignedInteger('mp_max');
+            $table->unsignedInteger('sp_min');
+            $table->unsignedInteger('sp_max');
             $table->timestamps();
         });
     }
