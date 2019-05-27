@@ -6,10 +6,10 @@
   </a>
 
   <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item active waves-effect">
+    <a href="/" class="list-group-item active waves-effect">
       <i class="fas fa-chart-pie mr-3"></i>Dashboard
     </a>
-    <a href="#" class="list-group-item list-group-item-action waves-effect">
+    <a href="/characters" class="list-group-item list-group-item-action waves-effect">
       <i class="fas fa-users mr-3"></i>Characters</a>
     <a href="#" class="list-group-item list-group-item-action waves-effect">
       <i class="fas fa-table mr-3"></i>Tables</a>

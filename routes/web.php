@@ -22,4 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
         return view('index');
     });
     
+    Route::resource('characters', 'CharacterController');
+    // Route::resource('characters', 'CharacterController', ['only' => ['index', 'create', 'edit', 'store', 'destroy']]);
+    
 });
