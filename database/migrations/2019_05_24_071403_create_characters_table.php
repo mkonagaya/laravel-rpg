@@ -18,6 +18,10 @@ class CreateCharactersTable extends Migration
             $table->unsignedBigInteger('character_model_type_id')->comment('キャラクターモデルID');
             $table->foreign('character_model_type_id')->references('id')->on('character_model_types')->onDelete('cascade');
             
+            $table->unsignedBigInteger('user_id')->comment('ユーザID');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
+            
             $table->string('character_name');
             $table->unsignedInteger('level')->default(1);
             $table->unsignedInteger('exp')->default(0)->comment('経験値');

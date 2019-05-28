@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            UsersTableSeeder::class,
             CharacterModelsTableSeeder::class,
             CharacterModelTypesTableSeeder::class,
             XiensTableSeeder::class,

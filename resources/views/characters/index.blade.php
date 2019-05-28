@@ -5,53 +5,30 @@
 @include('layouts.header')
 
 @section('content')
-<div class="container">
-  <!-- Content here -->
-  
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
+
+    <!-- Heading -->
+    <div class="card mb-4 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+
+        <!--Card content-->
+        <div class="card-body d-sm-flex justify-content-between">
+
+            <h4 class="mb-2 mb-sm-0 pt-1">
+                <a href="/" target="_blank">Home Page</a>
+                <span>/</span>
+                <span>キャラクター一覧</span>
+            </h4>
+
+        </div>
+
     </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-4">.col-4</div>
-    <div class="col-4">.col-4</div>
-    <div class="col-4">.col-4</div>
-  </div>
+    <!-- Heading -->
 
-  <div class="row">
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-    <div class="col-sm-4">.col-sm-4</div>
-  </div>
+    <a href="{{ action('CharacterController@create') }}" class="btn blue-gradient btn-rounded waves-effect waves-light">新規作成</a>
 
-  <div class="row">
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-  </div>
+@forelse ($characters as $character)
+    <li>{{ $user->character_name }}</li>
+@empty
+    <p>キャラなし</p>
+@endforelse
 
-  <div class="row">
-    <div class="col-lg-4">.col-lg-4</div>
-    <div class="col-lg-4">.col-lg-4</div>
-    <div class="col-lg-4">.col-lg-4</div>
-  </div>
-
-  <div class="row">
-    <div class="col-xl-4">.col-xl-4</div>
-    <div class="col-xl-4">.col-xl-4</div>
-    <div class="col-xl-4">.col-xl-4</div>
-  </div>
-</div>
-
-
-</div>
 @endsection

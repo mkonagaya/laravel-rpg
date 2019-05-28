@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CharacterController extends Controller
 {
@@ -13,7 +14,8 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        return view('characters.index');
+        return view('characters.index')
+            ->with(['characters' => Auth::User()->characters()]);
     }
 
     /**
@@ -23,7 +25,10 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('characters.create')
+            ->with([
+                    'character_model_types' => \App\CharacterModelType::all()
+                ]);
     }
 
     /**

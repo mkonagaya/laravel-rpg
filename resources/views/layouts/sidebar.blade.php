@@ -6,7 +6,7 @@
   </a>
 
   <div class="list-group list-group-flush">
-    <a href="/" class="list-group-item active waves-effect">
+    <a href="/" class="list-group-item list-group-item-action waves-effect">
       <i class="fas fa-chart-pie mr-3"></i>Dashboard
     </a>
     <a href="/characters" class="list-group-item list-group-item-action waves-effect">
