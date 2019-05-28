@@ -69,3 +69,14 @@ APP_SECURE=true # 追加
 * 使うスキルの優先度(戦闘は自動なので)
 * 回復薬の自動使用
 * 自動だとしたらどのタイミングで使うのか(残何%?)
+* 
+
+# バッシュコマンド
+
+[bash](http://tech.clickyourstyle.com/articles/8)
+
+```
+
+sh start.sh
+
+```
