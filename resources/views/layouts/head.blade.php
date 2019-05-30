@@ -5,6 +5,8 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Material Design Bootstrap</title>
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
   <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <!-- Bootstrap core CSS -->

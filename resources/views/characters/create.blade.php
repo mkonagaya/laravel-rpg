@@ -57,6 +57,7 @@
                                         href="#collapse{{ $character_model->id }}" 
                                         aria-expanded="false" 
                                         aria-controls="collapse{{ $character_model->id }}"
+                                        v-on:click="fetchTypes({{ $character_model->id }})"
                                     > 
                                     {{ $character_model->name }} <span class="badge badge-dark">{{ $character_model->character_model_types->count() }}</span>
                                     </a>
@@ -76,28 +77,6 @@
                     @endforelse    
                         
                 </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-                        <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0">
-                    </div>
-                    </div>
-                    </div>
-
-              <canvas id="myChart" width="677" height="338" class="chartjs-render-monitor" style="display: block; width: 677px; height: 338px;"></canvas>
 
             </div>
 
@@ -128,7 +107,18 @@
                       <input id="customRadio3" name="customRadio" type="radio" class="custom-control-input">
                       <label class="custom-control-label" for="customRadio3">種類３</label>
                     </div>
+                    
+                    <div class="custom-control custom-radio" v-for="type in types" v-bind:key="type.id">
+                      <input id="customRadio@{{type.id}}" name="customRadio" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio@{{type.id}}">@{{type.name}}</label>
+                      @{{type.id}}
+                      @{{type.name}}
+                    </div>
+                    
                 </div>
+                
+
+
             </div>
             <!--/.Card-->
             

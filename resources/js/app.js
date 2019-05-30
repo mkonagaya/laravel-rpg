@@ -26,7 +26,23 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+ 
+ 
 
+ 
 const app = new Vue({
     el: '#app',
+    data: {
+        types: []
+    },
+    methods: {
+        fetchTypes: function(id){
+            axios.get('/api/character_model_types/' + id).then((res)=>{
+                this.types = res.data
+            });
+        }
+    },
+    created(){
+        // this.fetchTodos();
+    }
 });
