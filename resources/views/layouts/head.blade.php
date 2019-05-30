@@ -9,12 +9,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 <!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
-<link rel="stylesheet" id="compiled.css-css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.2.min.css?ver=4.8.2" type="text/css" media="all">
 
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/37/2a/intl/ja_ALL/common.js"></script>
 <script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/37/2a/intl/ja_ALL/util.js"></script>
 

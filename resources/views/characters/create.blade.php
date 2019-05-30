@@ -24,22 +24,72 @@
 
     </div>
     <!-- Heading -->
-
-    <a href="{{ action('CharacterController@create') }}" class="btn blue-gradient btn-rounded waves-effect waves-light">登録</a>
-    
     
     <!--Grid row-->
     <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
         
         <!--Grid column-->
         <div class="col-md-9 mb-4">
+            
             <!--Card-->
             <div class="card">
                 
                 <!--Card content-->
                 <div class="card-body">
                     
-                    種別一覧
+                    <a href="{{ action('CharacterController@create') }}" class="btn btn-primary">登録</a>
+                    
+                    <p>種別一覧</p>
+                    
+                    
+                    <div class="accordion" id="characters" role="tablist">
+                    
+                    <p>{{ $character_models->count() }} 件</p>
+                    
+                    @forelse ($character_models as $character_model)
+                    
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading{{ $character_model->id }}">
+                                <h5 class="mb-0">
+                                    <a 
+                                        class="collapsed text-body stretched-link text-decoration-none" 
+                                        data-toggle="collapse" 
+                                        href="#collapse{{ $character_model->id }}" 
+                                        aria-expanded="false" 
+                                        aria-controls="collapse{{ $character_model->id }}"
+                                    > 
+                                    {{ $character_model->name }} <span class="badge badge-dark">{{ $character_model->character_model_types->count() }}</span>
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse{{ $character_model->id }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $character_model->id }}" data-parent="#characters">
+                            
+                                <p>キャラの説明</p>
+                                
+                            </div>
+                        </div>
+                    
+                    
+                        
+                    @empty
+                        <p>キャラモデルなし</p>
+                    @endforelse    
+                        
+                </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
                         <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
                             <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0">
@@ -51,68 +101,37 @@
 
             </div>
 
-          </div>
-          <!--/.Card-->
+            </div>
+            <!--/.Card-->
 
         </div>
         <!--Grid column-->
 
+        
         <!--Grid column-->
         <div class="col-md-3 mb-4">
-
-          <!--Card-->
-          <div class="card mb-4">
-
-            <!-- Card header -->
-            <div class="card-header text-center">
-              Pie chart
+            
+            <!--Card-->
+            <div class="card">
+                
+                <!--Card content-->
+                <div class="card-body">
+                    <div class="custom-control custom-radio">
+                      <input id="customRadio1" name="customRadio" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio1">種類１</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="customRadio2" name="customRadio" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio2">種類２</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="customRadio3" name="customRadio" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadio3">種類３</label>
+                    </div>
+                </div>
             </div>
-
-            <!--Card content-->
-            <div class="card-body"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-
-              <canvas id="pieChart" width="179" height="89" class="chartjs-render-monitor" style="display: block; width: 179px; height: 89px;"></canvas>
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
-          <!--Card-->
-          <div class="card mb-4">
-
-            <!--Card content-->
-            <div class="card-body">
-
-              <!-- List group links -->
-              <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action waves-effect">Sales
-                  <span class="badge badge-success badge-pill pull-right">22%
-                    <i class="fas fa-arrow-up ml-1"></i>
-                  </span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Traffic
-                  <span class="badge badge-danger badge-pill pull-right">5%
-                    <i class="fas fa-arrow-down ml-1"></i>
-                  </span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Orders
-                  <span class="badge badge-primary badge-pill pull-right">14</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Issues
-                  <span class="badge badge-primary badge-pill pull-right">123</span>
-                </a>
-                <a class="list-group-item list-group-item-action waves-effect">Messages
-                  <span class="badge badge-primary badge-pill pull-right">8</span>
-                </a>
-              </div>
-              <!-- List group links -->
-
-            </div>
-
-          </div>
-          <!--/.Card-->
-
+            <!--/.Card-->
+            
         </div>
         <!--Grid column-->
 

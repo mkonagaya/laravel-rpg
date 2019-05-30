@@ -4,6 +4,8 @@
 
 @include('layouts.header')
 
+@include('layouts.home_scripts')
+
 @section('content')
 
     <!-- Heading -->

@@ -27,7 +27,7 @@ class CharacterController extends Controller
     {
         return view('characters.create')
             ->with([
-                    'character_model_types' => \App\CharacterModelType::all()
+                    'character_models' => \App\CharacterModel::all()
                 ]);
     }
 

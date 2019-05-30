@@ -9,15 +9,18 @@
     
     <!--Main layout-->
     
-    <main class="pt-5 mx-lg-5">
-        <div class="container-fluid mt-5">
-        @yield('content')
+    
+    <div class="container-fluid mt-5">
+        <div class="row">
+            @include('layouts.sidebar')
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                @yield('content')
+            </main>
         </div>
-    </main>
+    </div>
     <!--/Main layout-->
 
     <!-- SCRIPTS -->
-    @yield('include_scripts')
-    
-    @yield('home_scripts')
-</body></html>
+    @include('layouts.include_scripts')
+</body>
+</html>

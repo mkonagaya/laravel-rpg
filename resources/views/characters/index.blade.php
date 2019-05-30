@@ -23,7 +23,7 @@
     </div>
     <!-- Heading -->
 
-    <a href="{{ action('CharacterController@create') }}" class="btn blue-gradient btn-rounded waves-effect waves-light">新規作成</a>
+    <a href="{{ action('CharacterController@create') }}" class="btn btn-primary">新規作成</a>
 
 @forelse ($characters as $character)
     <li>{{ $user->character_name }}</li>
@@ -32,3 +32,5 @@
 @endforelse
 
 @endsection
+
+
