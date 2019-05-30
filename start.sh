@@ -8,8 +8,9 @@ sed -i 's/DB_PASSWORD=secret/DB_PASSWORD=/g' .env
 
 echo APP_SECURE=true >> .env
 
-mysql -uroot 
-create database tw; 
-exit;
+OPTIONS="-u root"
+CMD="echo 'create database tw;' | mysql $OPTIONS -N"
+(`eval $CMD`)
+(`eval "exit;"`)
 
 php artisan migrate:refresh --seed
