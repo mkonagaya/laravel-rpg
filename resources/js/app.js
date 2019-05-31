@@ -28,13 +28,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
  
  
-
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
  
 const app = new Vue({
     el: '#app',
     data: {
         types: [],
         loading: false,
+        isPushedCharacterType: false,
     },
     methods: {
         fetchTypes: function(id)
@@ -44,22 +47,17 @@ const app = new Vue({
             axios.get('/api/character_model_types/' + id).then((res)=>{
                 this.types = res.data;
                 this.loading = false;
+                this.isPushedCharacterType = false;
             });
-            
             
         },
-        fetchType: function(id)
+        selectType: function()
         {
-            var filtered = this.types.filter(function(element, index) {
-                return (element.id === id);
-            });
-            
-            console.log(id);
-            console.log(filtered[0]);
+            this.isPushedCharacterType = true;
         }
     },
     created(){
         // htmlが読み込まれたら行うやつ。
-        this.fetchType(1);
+        //this.fetchType(1);
     }
 });

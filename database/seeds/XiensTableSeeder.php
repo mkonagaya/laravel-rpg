@@ -12,7 +12,7 @@ class XiensTableSeeder extends Seeder
     public function run()
     {
         $xiens = self::prepare();
-        
+        $coefficient = 1;
         foreach ($xiens as $xien_seed){
             
             $xien = new App\Xien();
@@ -25,7 +25,7 @@ class XiensTableSeeder extends Seeder
             $xien->mp_max = $xien_seed[6];
             $xien->sp_min = $xien_seed[7];
             $xien->sp_max = $xien_seed[8];
-            
+            $xien->coefficient  = $coefficient++;
             $xien->save();
         }
     }

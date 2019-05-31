@@ -18,8 +18,8 @@ class CreateCharacterModelTypesTable extends Migration
             
             $table->unsignedBigInteger('character_model_id');
             $table->foreign('character_model_id')->references('id')->on('character_models')->onDelete('cascade');
-            
             $table->string('model_type_name');
+            $table->unsignedInteger('init_lv')->comment('キャラクタ作成時 初期Lv');
             
             $table->unsignedInteger('hp');
             $table->unsignedInteger('mp');

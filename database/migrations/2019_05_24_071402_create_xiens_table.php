@@ -24,6 +24,8 @@ class CreateXiensTable extends Migration
             $table->unsignedInteger('mp_max');
             $table->unsignedInteger('sp_min');
             $table->unsignedInteger('sp_max');
+            $table->unsignedInteger('coefficient')->comment('係数。xienが同値の場合、高いほうが優先されステが振られる。');
+
             $table->timestamps();
         });
     }

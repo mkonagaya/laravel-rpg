@@ -49286,13 +49286,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 var app = new Vue({
   el: '#app',
   data: {
     types: [],
     loading: false,
-    selectedType: null,
-    isSelectedType: false
+    isPushedCharacterType: false
   },
   methods: {
     fetchTypes: function fetchTypes(id) {
@@ -49303,22 +49305,15 @@ var app = new Vue({
       axios.get('/api/character_model_types/' + id).then(function (res) {
         _this.types = res.data;
         _this.loading = false;
-        isSelectedType = false;
+        _this.isPushedCharacterType = false;
       });
     },
-    fetchType: function fetchType(id) {
-      var filtered = this.types.filter(function (element, index) {
-        return element.id === id;
-      });
-      console.log(id);
-      console.log(filtered[0]);
-      this.selectedType = filtered[0];
-      isSelectedType = true;
+    selectType: function selectType() {
+      this.isPushedCharacterType = true;
     }
   },
-  created: function created() {
-    // htmlが読み込まれたら行うやつ。
-    this.fetchType(1);
+  created: function created() {// htmlが読み込まれたら行うやつ。
+    //this.fetchType(1);
   }
 });
 
