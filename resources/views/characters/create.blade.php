@@ -109,10 +109,8 @@
                     </div>
                     
                     <div class="custom-control custom-radio" v-for="type in types" v-bind:key="type.id">
-                      <input id="customRadio@{{type.id}}" name="customRadio" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadio@{{type.id}}">@{{type.name}}</label>
-                      @{{type.id}}
-                      @{{type.name}}
+                      <input v-bind:id="'customRadio' + type.id" name="customRadio" type="radio" class="custom-control-input">
+                      <label class="custom-control-label" v-bind:for="'customRadio' + type.id">@{{type.model_type_name}}</label>
                     </div>
                     
                 </div>
