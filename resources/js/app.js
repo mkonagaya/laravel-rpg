@@ -33,16 +33,33 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        types: []
+        types: [],
+        loading: false,
     },
     methods: {
-        fetchTypes: function(id){
+        fetchTypes: function(id)
+        {
+            this.types = [];
+            this.loading = true;
             axios.get('/api/character_model_types/' + id).then((res)=>{
-                this.types = res.data
+                this.types = res.data;
+                this.loading = false;
             });
+            
+            
+        },
+        fetchType: function(id)
+        {
+            var filtered = this.types.filter(function(element, index) {
+                return (element.id === id);
+            });
+            
+            console.log(id);
+            console.log(filtered[0]);
         }
     },
     created(){
-        // this.fetchTodos();
+        // htmlが読み込まれたら行うやつ。
+        this.fetchType(1);
     }
 });

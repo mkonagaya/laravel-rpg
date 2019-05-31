@@ -16,4 +16,10 @@
 <script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/37/2a/intl/ja_ALL/common.js"></script>
 <script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/37/2a/intl/ja_ALL/util.js"></script>
 
+<style>
+[v-cloak] {
+  display: none;
+}
+</style>
+
 @endsection

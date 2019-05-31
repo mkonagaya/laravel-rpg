@@ -14,3 +14,7 @@ CMD="echo 'create database tw;' | mysql $OPTIONS -N"
 (`eval "exit;"`)
 
 php artisan migrate:refresh --seed
+
+npm install
+
+php artisan serve

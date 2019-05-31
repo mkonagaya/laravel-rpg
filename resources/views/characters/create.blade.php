@@ -29,7 +29,7 @@
     <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
         
         <!--Grid column-->
-        <div class="col-md-9 mb-4">
+        <div class="col-md-7 mb-4">
             
             <!--Card-->
             <div class="card">
@@ -38,9 +38,6 @@
                 <div class="card-body">
                     
                     <a href="{{ action('CharacterController@create') }}" class="btn btn-primary">登録</a>
-                    
-                    <p>種別一覧</p>
-                    
                     
                     <div class="accordion" id="characters" role="tablist">
                     
@@ -63,9 +60,9 @@
                                     </a>
                                 </h5>
                             </div>
-                            <div id="collapse{{ $character_model->id }}" class="collapse" role="tabpanel" aria-labelledby="heading{{ $character_model->id }}" data-parent="#characters">
+                            <div id="collapse{{ $character_model->id }}" class="collapse card-body" role="tabpanel" aria-labelledby="heading{{ $character_model->id }}" data-parent="#characters">
                             
-                                <p>キャラの説明</p>
+                                <p>{{ $character_model->name }}の説明</p>
                                 
                             </div>
                         </div>
@@ -88,37 +85,40 @@
 
         
         <!--Grid column-->
-        <div class="col-md-3 mb-4">
+        <div class="col-md-5 mb-4" v-cloak>
+            
+            <div v-show="loading" class="loader">Now loading...</div>
             
             <!--Card-->
-            <div class="card">
-                
+            <div v-show="!loading" v-if="types.length > 0" class="card mb-4">
+                <h5 class="card-header">戦闘タイプ一覧</h5>
                 <!--Card content-->
                 <div class="card-body">
-                    <div class="custom-control custom-radio">
-                      <input id="customRadio1" name="customRadio" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadio1">種類１</label>
+                    <div class="custom-control custom-radio" v-for="type in types" :key="type.id">
+                      <input :id="'customRadio' + type.id" name="customRadio" type="radio" class="custom-control-input" v-on:click="fetchType(type.id)">
+                      <label class="custom-control-label" :for="'customRadio' + type.id">@{{type.model_type_name}}</label>
                     </div>
-                    <div class="custom-control custom-radio">
-                      <input id="customRadio2" name="customRadio" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadio2">種類２</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                      <input id="customRadio3" name="customRadio" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadio3">種類３</label>
-                    </div>
-                    
-                    <div class="custom-control custom-radio" v-for="type in types" v-bind:key="type.id">
-                      <input v-bind:id="'customRadio' + type.id" name="customRadio" type="radio" class="custom-control-input">
-                      <label class="custom-control-label" v-bind:for="'customRadio' + type.id">@{{type.model_type_name}}</label>
-                    </div>
-                    
                 </div>
-                
-
 
             </div>
             <!--/.Card-->
+            
+            <!--Card-->
+            <div v-show="!loading" v-if="types.length > 0" class="card">
+                <h5 class="card-header">ステータス</h5>
+                <!--Card content-->
+                <div class="card-body">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">HP</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="HP" aria-label="HP" aria-describedby="inputGroup-sizing-sm" readonly v-bind:value="selectedType.hp">
+                    </div>
+                </div>
+
+            </div>
+            <!--/.Card-->
+            
             
         </div>
         <!--Grid column-->
